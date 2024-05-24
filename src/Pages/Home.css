@@ -2,30 +2,23 @@ h1{
     text-align: center;
     font-family: sans-serif;
   }
-  .App{
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 40px;
-    
-   
-  }
+ 
   .card {
-   
+    width: 20%;
     text-align: center;
     margin: auto;
     box-shadow: 1px 1px 2px 2px lightgrey;
     padding: 10px;
     border-radius: 20px;
     font-family: sans-serif;
+    margin: 20px;
   }
   .card > img {
     width: 100%;
     height: 200px;
     cursor: pointer;
     border-radius: 10px;
-    transition: transform .9s eas
+    transition: transform .2s eas
     
   }
   img:hover{
@@ -36,3 +29,5 @@ h1{
     text-align: center;
     font-family: sans-serif;
   }
+
+ 
