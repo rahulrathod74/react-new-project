@@ -22,9 +22,10 @@ const links=[
         to:"/login",
         label:"Login"
     },
+   
     {
-        to:"/task",
-        label:"Task"
+        to:"/tickets",
+        label:"Tickets"
     },
     
 

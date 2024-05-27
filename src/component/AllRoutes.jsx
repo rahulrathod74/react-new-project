@@ -3,9 +3,11 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import Login from "../Pages/Login";
-import Task from "../Pages/Task";
 import PrivateRoutes from "./PrivateRoutes";
-
+import Tickets from "../Pages/Tickets";
+import TicketView from "../Pages/TicketView";
+import CreateTicket from "../Pages/CreateTicket";
+import TicketEdit from "../Pages/TicketEdit";
 export default function AllRoutes(){
     return(
         <Routes>
@@ -29,11 +31,27 @@ export default function AllRoutes(){
            
             }/>
 
-            <Route path="/task" element={
+            
+            <Route path="/tickets" element={
                 <PrivateRoutes>
-                     <Task/>
+                    <Tickets/>
                 </PrivateRoutes>
-           
+            }/>
+            <Route path="/ticket/create" element={
+                <PrivateRoutes>
+                    <CreateTicket/>
+                </PrivateRoutes>
+            }/>
+             <Route path="/ticket/view/:id" element={
+                <PrivateRoutes>
+                    <TicketView/>
+                </PrivateRoutes>
+            }/>
+             <Route path="/ticket/edit/:id" element={
+                <PrivateRoutes>
+                    {/* <h2>ello</h2> */}
+                    <TicketEdit />
+                </PrivateRoutes>
             }/>
             {/* Public page */}
             <Route path="/login" element={<Login/> }/>

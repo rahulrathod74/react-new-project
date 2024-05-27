@@ -2,10 +2,12 @@ import { Box, Heading ,Input,Button,VStack,Container } from '@chakra-ui/react'
 import React,{useState,useContext} from 'react'
 import axios from 'axios'
 import {AuthContext} from "../context/AuthContext"
+import { Navigate } from 'react-router-dom'
 const Login = () => {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
-  const{login}=useContext(AuthContext)
+  const{login,authDetails: {isLoggedIn}}=useContext(AuthContext)
+
   async function handleClick(){
     try {
       let res=await axios({
@@ -17,10 +19,14 @@ const Login = () => {
         },
       })
       login(res?.data?.token);
+    
     } catch (error) {
       
     }
   }
+  // if(isLoggedIn){
+  //   return <Navigate to="/" />
+  // }
   return (
     <Container maxW="600px">
    <VStack spacing={6}>
